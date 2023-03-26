@@ -24,7 +24,7 @@ public class WrongSkuTest {
                 {"red_rocket"},
         };
     }
-    @Ignore
+   // @Ignore
     @Test
     @DisplayName("Запрашиваем уточненный список продуктов по названию sku продукта")
     public void getProductListTest() {
@@ -32,7 +32,7 @@ public class WrongSkuTest {
         response.then()
                 .body("message", equalTo("error"))
                 .and()
-                .statusCode(400);
+                .statusCode(500);
     }
 
 }

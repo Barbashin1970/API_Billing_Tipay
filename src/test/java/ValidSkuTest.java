@@ -25,7 +25,7 @@ public class ValidSkuTest {
         };
     }
 
-    @Ignore
+   // @Ignore
     @Test
     @DisplayName("Запрашиваем уточненный список продуктов по названию sku продукта")
     public void getProductListTest() {
