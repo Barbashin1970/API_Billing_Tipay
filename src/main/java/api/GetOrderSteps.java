@@ -38,6 +38,7 @@ public class GetOrderSteps {
                 .baseUri(URL_ORDER)
                 .post(POST_ORDER_ACK + order_id + "/ack");
     }
+
     @Step("Проверка заказа - VERIFY - по токену и номеру заказа")
     public Response verifyOrder(@Param(mode = MASKED) String accessToken, String order_id, String order_token) {
         return given()

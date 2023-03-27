@@ -32,6 +32,7 @@ public class GetProductTest {
                 .body("error", equalTo(null))
                 .statusCode(200);
     }
+
     @Test
     @DisplayName("Запрашиваем уточненный список продуктов по названию sku продукта")
     public void getSkuProductListTest() {
