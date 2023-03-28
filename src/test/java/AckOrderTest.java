@@ -6,8 +6,8 @@ import org.junit.Test;
 import pojo.Product;
 
 import static api.Auth.getToken;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class AckOrderTest {
     String accessToken;
@@ -20,7 +20,6 @@ public class AckOrderTest {
     public void acknowledgeOrderTest() {
         accessToken = getToken();
         Product product = postStep.getResponseSerial(accessToken);
-        // printOrder(product);
         order_id = product.getData().getOrder_id();
         Response response = getStep.ackOrder(accessToken, order_id);
         response.then()
@@ -40,15 +39,7 @@ public class AckOrderTest {
         Thread.sleep(20000);
         Product newProduct = getStep.getOrderInfo(accessToken, order_id); // получаем инфо по ордеру
         String status = newProduct.getData().getState(); // достаем статус заказа
-        if ("CONSUMED".equals(status)) {
-            assertEquals("CONSUMED", status);
-        } else if ("PAYED".equals(status)) {
-            assertEquals("PAYED", status);
-        } else if ("PAYMENT_CREATED".equals(status)) {
-            assertEquals("PAYMENT_CREATED", status);
-        } else {
-            assertEquals("CONSUMED", status);
-        }
-    }
+        assertThat(status, either(is("CONSUMED")).or(is("PAYED")).or(is("PAYMENT_CREATED")));
 
+    }
 }
