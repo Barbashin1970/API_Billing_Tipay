@@ -8,8 +8,6 @@ import static secret.Secret.*;
 
 public class Auth {
 
-  //  private final static String CREATE_USER = "http://vmapp1-1.vdc1.tipay.ru:32003/realms/test/protocol/openid-connect/token";
-
     @Step("Авторизация пользователя")
     public static Response loginUser() {
         return given()

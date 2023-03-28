@@ -1,7 +1,7 @@
 package url;
 
 public class Constants {
-    public final static String URL_ORDER = "http://vmapp1-1.vdc1.tipay.ru:32001/";
+
     public final static String GET_ORDERS = "/orders";
     public final static String GET_ORDER = "/order/";
     public final static String CANCEL_ORDER = "internal/api/v1/cancel/";

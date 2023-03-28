@@ -7,6 +7,7 @@ import pojo.Product;
 
 import static io.qameta.allure.model.Parameter.Mode.MASKED;
 import static io.restassured.RestAssured.given;
+import static secret.Secret.URL_ORDER;
 import static url.Constants.*;
 
 public class GetOrderSteps {
