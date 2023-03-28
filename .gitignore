@@ -1,3 +1,5 @@
 /.idea/
 /target/
 /.allure/
+/secret/
+/src/main/java/secret/
